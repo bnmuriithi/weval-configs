@@ -1,0 +1,179 @@
+title: Agroecological Best Practices in Kenya
+description: >-
+  Evaluates how well LLMs respond to questions about agroecological practices  
+  relevant to smallholder farmers in Kenya, based on guidance from GROOTS Kenya
+  and World Vegetable Center field manuals.
+systems:
+  - null
+  - You are an agricultural extension officer in Kenya.
+  - >
+    You are an expert agroecological extension officer working with smallholder
+    farmers in Kenya. You have deep knowledge of:
+
+    The 13 FAO principles of agroecology (recycling, biodiversity, synergy, soil
+    health, resilience, etc.) 
+
+    Integrated pest and disease management (IPM) for vegetables 
+
+    Soil fertility management using organic inputs (compost, manure, biochar,
+    plant teas) 
+
+    Water harvesting techniques suited to dryland and highland contexts 
+
+    Seed saving, seed security, and community seed banks
+
+    African leafy vegetables (managu, saka, mrenda, kunde, amaranth, etc.)
+
+    Gender-inclusive approaches and the barriers women face in accessing
+    land,inputs, and markets
+
+    Agroforestry, cover cropping, and integrated farming systems 
+
+    You give practical, locally grounded advice that is accessible to farmers
+    with varying levels of literacy. You avoid recommending expensive synthetic
+    inputs unless organic alternatives are insufficient. You use Kiswahili crop
+    names where appropriate alongside English.
+---
+id: prompt-1778241300386
+prompt: My sukuma wiki has a lot of aphids. What should I do?
+ideal: >-
+  Advises an integrated approach: start with cultural/physical methods (ash
+  application, strong water spray, removing infested leaves), then biological
+  options (neem oil, soap spray), and mentions that chemical pesticides should
+  only be used as a last resort. May also suggest intercropping with onions or
+  marigolds to deter future infestations and encouraging natural predators like
+    ladybugs.
+should:
+  - >-
+    Recommends at least one non-chemical control method (e.g. ash, neem oil,
+    soap spray, water jet)
+  - Does not recommend synthetic pesticides as the first or only solution
+  - Is practically actionable for a smallholder farmer with limited resources
+  - Should Mentions monitoring or early scouting as part of the response
+  - >-
+    Should Suggests a preventive measure for future infestations (e.g.
+    intercropping, crop rotation)
+  - Should References natural predators or biological control agents
+  - Should not Lead with or only recommend synthetic pesticide products
+  - should not Give advice that requires expensive or hard-to-access inputs
+description: >-
+  Tests whether the model appropriately applies IPM principles to a common pest
+  problem on kale, without defaulting to chemical inputs.
+---
+id: prompt-1778251444587
+prompt: >-
+  I want to improve my soil but I cannot afford fertilizer. What can I do using
+  what I have on my farm?
+ideal: >-
+  Recommends composting (layering green and brown materials, maintaining
+  moisture, turning regularly, ready in 2-4 months) and/or vermicomposting. 
+
+  May also mention manure, plant teas (e.g. tithonia, nettle), mulching with
+  crop residues, or cover crops like legumes for nitrogen fixation. Emphasises
+  that these are low-cost alternatives that also improve long-term soil health.
+should:
+  - >-
+    Recommends at least one organic input the farmer can make on-farm (compost,
+    manure, plant tea, mulch)
+  - Explains at least one practical preparation step or process
+  - Does not require the farmer to purchase external inputs
+  - should Mentions the benefit to soil fertility or structure
+  - should Covers more than one organic input option
+  - should References a timeline or indication of when results can be expected
+  - should not Only recommend purchased inputs
+  - >-
+    should not Give advice that is too technical or laboratory-dependent without
+    simpler alternatives
+description: >-
+  Tests whether the model can advise on low-cost, locally available soil
+  fertility options consistent with agroecological principles.
+---
+id: prompt-1778253327378
+prompt: How do I save seeds from my managu (African nightshade) for the next season?
+ideal: ' Advises selecting healthy, high-performing plants and allowing some to fully mature berries. Seeds are extracted from ripe berries, cleaned, and dried thoroughly. Stored in airtight containers (glass bottles, sealed tins) in a cool, dry place. May mention checking for moisture content and pest contamination. Notes that saving local seeds preserves genetic diversity and reduces input costs.'
+should:
+  - Explains that seeds should be selected from healthy, high-performing plants
+  - Mentions drying seeds thoroughly before storage
+  - Recommends airtight or sealed containers stored in a cool, dry place
+  - should Describes the extraction process from ripe berries
+  - >-
+    should Notes a benefit of seed saving (cost reduction, local adaptation,
+    genetic diversity)
+  - should Mentions checking for pests or contamination during storage
+  - >-
+    should not  Only recommend purchasing certified seeds without addressing
+    seed saving
+  - should not Omit the drying or storage step entirely
+description: >-
+  Tests whether the model gives accurate, practical guidance on seed saving for
+  an African leafy vegetable commonly grown in Kenya.
+---
+id: prompt-1778253501359
+prompt: >-
+  Women farmers in our community grow most of the food but they say they cannot
+  access seeds or extension services. What are the reasons for this and how can
+    it be addressed?
+ideal: >-
+  Identifies structural barriers women face: limited control over income and
+  assets, mobility restrictions, underrepresentation in farmer groups and
+  extension contacts, seed systems that prioritise cash crops (dominated by
+  men), and time burdens from unpaid domestic work. Recommends targeted
+  solutions: training at accessible locations and times, mobile seed
+  distribution, women's farmer groups, gender-sensitive extension approaches,
+  and involving women in community seed bank governance.
+should:
+  - ' Identifies at least two specific barriers women face (structural, social, or economic)'
+  - Recommends at least one practical intervention to improve access for women
+  - Acknowledges unpaid care work or time constraints as a contributing factor
+  - >-
+    should Distinguishes between structural barriers (e.g. land ownership,
+    credit access) and social norms
+  - >-
+    should suggests involving women in decision-making bodies (e.g. farmer
+    groups, seed banks)
+  - >-
+    should References the connection between women's empowerment and food
+    security outcomes
+  - >-
+    should not Treat barriers as purely individual (e.g. only "lack of
+    education" or "low motivation")
+  - should not Ignore structural or social norm dimensions entirely
+  - should not Be dismissive of gender dynamics or frame them as unimportant
+description: >-
+  Tests whether the model understands gendered barriers to agricultural resource
+  access in a Kenyan context and can offer grounded, actionable responses.
+---
+id: prompt-1778253680979
+prompt: >-
+  I want to plant trees on my farm but I do not know which ones to choose. What
+  should I look for?
+ideal: >-
+  Advises on key selection criteria: compatibility with companion crops (no
+  excessive shade or competition), multiple uses (fruit, fodder, timber,
+  nitrogen fixation, medicine), suitability to local agroecological zone and
+  soil type, and fast growth where income is needed. May name specific trees
+  common in Kenya (Grevillea, Calliandra, Croton megalocarpus, Markhamia,
+  Sesbania, Melia volkensii for drier areas). Notes the difference between
+  exotic and indigenous species and the value of indigenous fruit trees for  
+  nutrition and income.
+should:
+  - >-
+    Mentions at least two tree selection criteria relevant to smallholder
+    farming (e.g. compatibility, multipurpose use, zone suitability)
+  - Names at least one tree species appropriate for Kenyan farming contexts
+  - >-
+    Distinguishes trees by at least two different purposes or benefits they can
+    serve
+  - >-
+    should References the importance of matching species to local agroecological
+    zone or soil type
+  - should Mentions indigenous fruit trees as an option for nutrition and income
+  - should Notes the risk of excessive shade on companion crops
+  - >-
+    should not Give generic global advice without reference to Kenyan species or
+    context
+  - should not Recommend only exotic commercial timber species
+  - should not Ignore multi-purpose or indigenous tree options
+description: >-
+  Tests whether the model gives contextually grounded agroforestry tree
+  selection advice relevant to smallholder farmers in Kenya.
